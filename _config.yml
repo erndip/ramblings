@@ -19,9 +19,9 @@ defaults:
 # Get repo_id and category_id from https://giscus.app
 giscus:
   repo: erndip/ramblings
-  repo_id: REPLACE_ME
+  repo_id: R_kgDOUVkqvw
   category: Announcements
-  category_id: REPLACE_ME
+  category_id: DIC_kwDOUVkqv84DFVsQ
 
 exclude:
   - README.md
