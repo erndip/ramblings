@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  {% feed_meta %}
+  <style>
+    :root { --fg: #222; --muted: #777; --bg: #fdfdfb; --link: #2a5db0; --rule: #e4e4e0; }
+    @media (prefers-color-scheme: dark) {
+      :root { --fg: #ddd; --muted: #999; --bg: #161616; --link: #8ab4f8; --rule: #333; }
+    }
+    body {
+      max-width: 42rem; margin: 0 auto; padding: 2rem 1rem 4rem;
+      font: 1.0625rem/1.65 system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--fg); background: var(--bg);
+    }
+    a { color: var(--link); }
+    header a { color: var(--fg); font-weight: 700; text-decoration: none; }
+    article h1 { margin-bottom: 0; line-height: 1.25; }
+    article h1 a { color: inherit; text-decoration: none; }
+    time { color: var(--muted); font-size: 0.9em; }
+    img { max-width: 100%; }
+    pre { overflow-x: auto; padding: 0.75rem; background: var(--rule); border-radius: 4px; }
+    code { font-size: 0.9em; }
+    blockquote { margin-left: 0; padding-left: 1rem; border-left: 3px solid var(--rule); color: var(--muted); }
+    .comments { margin-top: 3rem; }
+    .archive { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+    .archive ul { list-style: none; padding: 0; }
+    .archive li { margin: 0.25rem 0; }
+    .archive time { display: inline-block; min-width: 6.5rem; }
+    .archive .current a { color: var(--fg); font-weight: 600; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header><a href="{{ '/' | relative_url }}">{{ site.title }}</a></header>
+  <main>
+    {{ content }}
+  </main>
+  {% include archive.html %}
+</body>
+</html>

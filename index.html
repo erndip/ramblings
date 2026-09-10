@@ -1,0 +1,9 @@
+---
+layout: default
+---
+{% assign latest = site.posts.first %}
+{% if latest %}
+  {% include post.html post=latest body=latest.content %}
+{% else %}
+  <p>Nothing here yet.</p>
+{% endif %}

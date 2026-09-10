@@ -1,0 +1,27 @@
+title: Ramblings
+description: Things I've been thinking about.
+author: Ernie Dippold
+
+url: https://erndip.github.io
+baseurl: /ramblings
+permalink: /:title/
+
+plugins:
+  - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+# Get repo_id and category_id from https://giscus.app
+giscus:
+  repo: erndip/ramblings
+  repo_id: REPLACE_ME
+  category: Announcements
+  category_id: REPLACE_ME
+
+exclude:
+  - README.md
