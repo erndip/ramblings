@@ -16,7 +16,7 @@
       --bg-secondary: #13213e;
       --bg-card: #040404;
       --accent: #4f9cf9;
-      --text-primary: #e1e8f0;
+      --text-primary: #cfd8e4;
       --text-secondary: #7d90a8;
       --border: #1e2d45;
     }
@@ -47,7 +47,7 @@
     blockquote { margin-left: 0; padding-left: 1rem; border-left: 3px solid var(--accent); color: var(--text-secondary); }
     hr { border: 0; border-top: 1px solid var(--border); }
 
-    .comments { margin-top: 3rem; }
+    .comments { margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--border); }
     .archive { margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--border); }
     .archive h2 {
       margin: 0 0 1.25rem; font-size: 0.8rem; font-weight: 600;
@@ -56,7 +56,10 @@
     .archive ul { list-style: none; margin: 0; padding: 0; }
     .archive li { display: flex; gap: 1rem; padding: 0.3rem 0; }
     .archive time { flex: 0 0 6rem; }
-    .archive .current a { color: var(--text-primary); font-weight: 600; }
+    .archive a { color: var(--text-primary); font-weight: 500; }
+    .archive a:visited { color: var(--text-secondary); }
+    .archive .current a { text-decoration: underline; }
+    .archive .current a:visited { color: var(--text-primary); }
 
     footer { margin-top: 3rem; padding: 2rem 0; border-top: 1px solid var(--border); font-size: 0.875rem; display: flex; justify-content: space-between; }
     footer a { color: var(--text-secondary); }
@@ -66,7 +69,7 @@
 <body>
   <div class="wrap">
     <header>
-      <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <span class="site-title">{{ site.title }}</span>
       <p class="tagline">{{ site.description }}</p>
     </header>
     <main>
