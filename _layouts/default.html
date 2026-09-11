@@ -70,7 +70,7 @@
   <div class="wrap">
     <header>
       <span class="site-title">{{ site.title }}</span>
-      <p class="tagline">{{ site.description }}</p>
+      <p class="tagline" id="tagline">{{ site.description }}</p>
     </header>
     <main>
       {{ content }}
@@ -81,5 +81,16 @@
       <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
     </footer>
   </div>
+  <script>
+    fetch('{{ "/descriptions.txt" | relative_url }}')
+      .then(function (res) { return res.text(); })
+      .then(function (text) {
+        var lines = text.split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
+        if (lines.length === 0) return;
+        var tagline = document.getElementById('tagline');
+        tagline.textContent = lines[Math.floor(Math.random() * lines.length)];
+      })
+      .catch(function () { /* keep default tagline on failure */ });
+  </script>
 </body>
 </html>
